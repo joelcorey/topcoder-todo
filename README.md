@@ -44,3 +44,11 @@ Following screens must be included
     A way to create, edit and delete to-do items
 
     Log out
+
+## Install
+
+Docker for Windows
+PHP and Composer installed locally
+
+From the root directoy: 
+docker-compose up
