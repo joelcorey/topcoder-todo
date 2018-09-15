@@ -10,6 +10,11 @@ https://github.com/docker-library/php/issues/344
 ### Step by step
 - Via command line, navigate to ./app-install
 - Type: ```composer update```
+- Duplicate the file ```env.example``` to ```.env```
+- Copy the database name ```MYSQL_DATABASE=``` from the root project directory docker-compose.yml file to the ```DB_DATABASE=``` in the /app-data/.env file 
+- Copy the database user ```MYSQL_USER=``` from the root project directory docker-compose.yml file to the ```DB_USERNAME=``` in the /app-data/.env file 
+- Copy the database name ```MYSQL_PASSWORD=``` from the root project directory docker-compose.yml file to the ```DB_PASSWORD=``` in the /app-data/.env file 
+- In the same directory that ```.env``` is in: ```php artisan key:generate```
 
 ### Notes
 
@@ -23,8 +28,13 @@ Stop and remove all docker containers and images
 SSH in to a running a container
 - Get list of running containers: ```docker ps```
 - ```docker exec -it container_name /bin/bash```
+- To exit: ```exit```
 
+Project web server root directory
 /app-data/public is the same as a ./public folder on a web server
+
+Rebuild a Docker container
+```docker-compose up -d --force-recreate --build```
 
 ## TopCoder guidelines:
 
