@@ -20,6 +20,9 @@ Stop and remove all docker containers and images
 - Remove all containers. ```docker rm $(docker ps -aq)```
 - Remove all images. ```docker rmi -f $(docker images -q)```
 
+SSH in to a running a container
+- Get list of running containers: ```docker ps```
+- ```docker exec -it container_name /bin/bash```
 
 /app-data/public is the same as a ./public folder on a web server
 
@@ -68,11 +71,3 @@ Following screens must be included
     A way to create, edit and delete to-do items
 
     Log out
-
-## Install
-
-Docker for Windows
-PHP and Composer installed locally. This mimicks having it installed on your server.
-
-From the root directoy: 
-docker-compose up
