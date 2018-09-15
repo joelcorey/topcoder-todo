@@ -7,6 +7,9 @@ PHP 7.2 or greater, Composer, Docker
 ### On Composer not being Dockerized
 https://github.com/docker-library/php/issues/344
 
+### Notes
+
+/app-data/public is the same as a ./public folder on a web server
 
 ## TopCoder guidelines:
 
