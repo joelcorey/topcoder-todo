@@ -1,4 +1,13 @@
 
+## Install
+
+Host machine requirements:
+PHP 7.2 or greater, Composer, Docker
+
+### On Composer not being Dockerized
+https://github.com/docker-library/php/issues/344
+
+
 ## TopCoder guidelines:
 
 ### Challenge Overview
@@ -48,7 +57,7 @@ Following screens must be included
 ## Install
 
 Docker for Windows
-PHP and Composer installed locally
+PHP and Composer installed locally. This mimicks having it installed on your server.
 
 From the root directoy: 
 docker-compose up
