@@ -9,5 +9,5 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-enable imagick \
     && docker-php-ext-install pdo_mysql intl #mcrypt
 
-ADD . /var/www
-RUN chown -R www-data:www-data /var/www
+ADD . /var/www/storage
+RUN chown -R www-data:www-data /var/www/storage

@@ -28,10 +28,10 @@ services:
     volumes:
       - ./data-db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=dfgdfgdfgdfgdYX^bz@
-      - MYSQL_DATABASE=alb
-      - MYSQL_USER=alb123easyStreet
-      - MYSQL_PASSWORD=PieisAWeSome124241
+      - MYSQL_ROOT_PASSWORD=gdYX^bz@
+      - MYSQL_DATABASE=topcoderToDo
+      - MYSQL_USER=easyStreet
+      - MYSQL_PASSWORD=pieIsAwesome
     ports:
       - "3306:3306"
 volumes:
