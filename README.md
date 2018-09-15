@@ -15,6 +15,7 @@ https://github.com/docker-library/php/issues/344
 - Copy the database user ```MYSQL_USER=``` from the root project directory docker-compose.yml file to the ```DB_USERNAME=``` in the /app-data/.env file 
 - Copy the database name ```MYSQL_PASSWORD=``` from the root project directory docker-compose.yml file to the ```DB_PASSWORD=``` in the /app-data/.env file 
 - In the same directory that ```.env``` is in: ```php artisan key:generate```
+- In your web browser navigate to: ```localhost```
 
 ### Notes
 
