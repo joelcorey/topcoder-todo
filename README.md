@@ -7,10 +7,19 @@ PHP 7.2 or greater, Composer, Docker
 ### On Composer not being Dockerized
 https://github.com/docker-library/php/issues/344
 
+### Step by step
 - Via command line, navigate to ./app-install
 - Type: ```composer update```
 
 ### Notes
+
+Stop and remove all docker containers and images
+
+- List all containers (only IDs) ```docker ps -a```
+- Stop all running containers. ```docker stop $(docker ps -aq)```
+- Remove all containers. ```docker rm $(docker ps -aq)```
+- Remove all images. ```docker rmi -f $(docker images -q)```
+
 
 /app-data/public is the same as a ./public folder on a web server
 
