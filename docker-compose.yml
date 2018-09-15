@@ -8,7 +8,7 @@ services:
       dockerfile: php.dockerfile
     working_dir: /var/www
     volumes:
-      - ./data-www:/var/www
+      - ./app-data:/var/www
     environment:
       - DB_PORT=3306
       - DB_HOST=database
