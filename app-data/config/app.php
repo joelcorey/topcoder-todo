@@ -150,6 +150,8 @@ return [
         /*
          * Package Service Providers...
          */
+        // For Socialite OAuth logins
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
          * Application Service Providers...
