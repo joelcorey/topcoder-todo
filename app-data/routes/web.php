@@ -11,6 +11,9 @@
 |
 */
 
+Log::info("hi");
+
 Route::get('/', function () {
     return view('welcome');
 });
+
