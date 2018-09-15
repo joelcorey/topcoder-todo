@@ -7,7 +7,7 @@ PHP 7.2 or greater, Composer, Docker
 ### On Composer not being Dockerized
 https://github.com/docker-library/php/issues/344
 
-### Step by step
+### Install directions
 - Via command line, navigate to ./app-install
 - Type: ```composer update```
 - Duplicate the file ```env.example``` to ```.env```
