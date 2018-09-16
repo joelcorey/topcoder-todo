@@ -63,7 +63,6 @@ class LoginController extends Controller
         $user = new User;
         $user->name = $gitHub->getName();
         $user->email = $gitHub->getEmail();
-        $user->password = $gitHub->getToken();
         $user->save();
 
         print_r($user);
