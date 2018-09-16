@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Socialite;
 
+use App\User;
+
 class LoginController extends Controller
 {
     /*
@@ -56,7 +58,9 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('github')->user();
+        $gitHub = Socialite::driver('github')->user();
+
+        
         print_r($user);
         // $user->token;
     }
