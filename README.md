@@ -23,9 +23,9 @@ Common Laravel project errors
 
 "There is no existing directory at ".../storage/logs" and its not buildable: Permission denied"
 Usually the first two commands will fix:
-```php artisan route:clear```
-```php artisan config:clear```
-```php artisan cache:clear```
+- ```php artisan route:clear```
+- ```php artisan config:clear```
+- ```php artisan cache:clear```
 
 Stop and remove all docker containers and images
 
