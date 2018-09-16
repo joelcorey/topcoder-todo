@@ -65,6 +65,10 @@ class LoginController extends Controller
         $user->email = $gitHub->getEmail();
         $user->save();
 
+        // Login the user
+
+        // Redirect to a page
+
         print_r($user);
         // $user->token;
     }
