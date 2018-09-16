@@ -63,6 +63,9 @@
                             </div>
                         </div>
                     </form>
+
+                    <a href="{{ url(login/github) }}" class="btn btn-primary"></a>
+
                 </div>
             </div>
         </div>
