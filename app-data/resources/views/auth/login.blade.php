@@ -64,7 +64,9 @@
                         </div>
                     </form>
 
-                    <a href="{{ url('login/github') }}" class="btn btn-secondary">Login GitHub</a>
+                    <a href="{{ url('auth/redirect/github') }}" class="btn btn-secondary">Login GitHub</a>
+
+                    <a href="{{ url('auth/redirect/linkedin') }}" class="btn btn-secondary">Login LinkedIn</a>
 
                 </div>
             </div>

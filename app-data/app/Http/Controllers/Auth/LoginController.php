@@ -42,48 +42,47 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    /**
-     * Redirect the user to the GitHub authentication page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function redirectToProvider()
+
+
+
+    public function redirect($provider)
     {
-        return Socialite::driver('github')->redirect();
+        return Socialite::with($provider)->redirect();
     }
 
-    /**
-     * Obtain the user information from GitHub.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function handleProviderCallback()
+    public function callback($provider)
     {
-        $gitHubUser = Socialite::driver('github')->user();
-
-        $user = $this->userFindOrCreate($gitHubUser);
-        
+        $user = $this->userFindOrCreate(Socialite::driver($provider));
+     
+        //auth()->login($user);
         Auth::login($user, true);
 
-        return redirect($this->redirectTo);
+        return redirect('/home');
 
     }
 
-    public function userFindOrCreate($gitHubUser)
+    public function userFindOrCreate($provider)
     {
-        //print_r($gitHubUser);
 
-        $user = User::where('provider_id', $gitHubUser->id)->first();
-
-        if(!$user)
-        {
-            $user = new User;
-            $user->name = $gitHubUser->getName();
-            $user->email = $gitHubUser->getEmail();
-            $user->provider_id = $gitHubUser->id;
-            $user->save();
+        $providerUser = $provider->user();
+ 
+        $providerName = class_basename($provider);
+ 
+        $user = User::whereProvider($providerName)
+            ->whereProviderId($providerUser->getId())
+            ->first();
+ 
+        if (!$user) {
+            $user = User::create([
+                'email' => $providerUser->getEmail(),
+                'name' => $providerUser->getName(),
+                'provider_id' => $providerUser->getId(),
+                'provider' => $providerName
+            ]);
         }
-
+        
         return $user;
     }
+
+
 }

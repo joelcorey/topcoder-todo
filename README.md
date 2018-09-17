@@ -1,11 +1,19 @@
+### Install notes
+
+For ease of install, the ENV file is included. This is against industry best practices. For this small edge case, it is acceptable.
+
+Similarly, the Composer vendors folder will be included. Again this is for ease of use, and against best practices.
+On Composer not being Dockerized:
+https://github.com/docker-library/php/issues/344
+
+I had severe difficulty getting Composer "dockerized", and had to move it off in to a seperate project for a later time. Time management!
 
 ## Install
 
 Host machine requirements:
-PHP 7.2 or greater, Composer, Docker
+/**PHP 7.2 or greater, Composer,**/ Docker
 
-### On Composer not being Dockerized
-https://github.com/docker-library/php/issues/344
+
 
 ### Install directions
 - Via command line, navigate to ./app-install
