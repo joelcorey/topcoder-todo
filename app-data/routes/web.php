@@ -23,5 +23,6 @@ Route::get('auth/callback/{provider}', 'Auth\LoginController@callback');
 Route::get('auth/redirect/{provider}', 'Auth\LoginController@redirect');
 
 Route::get('/tasks', 'TaskController@index');
-Route::post('/task', 'TaskController@store');
-Route::delete('/task/{task}', 'TaskController@destroy');
+Route::post("/task", "TaskController@store");
+Route::get("/{id}/complete", "TaskController@complete");
+Route::get("/{id}/delete", "TaskController@destroy");

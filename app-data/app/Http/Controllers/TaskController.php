@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 use App\Task;
+use Log;
 
 class TaskController extends Controller
 {
@@ -30,7 +32,9 @@ class TaskController extends Controller
     {
         $input = $request->all();
         $task = new Task();
+        $task->user_id = \Auth::user()->id;
         $task->task = request("task");
+        //log::info(print_r($task, true));
         $task->save();
         return Redirect::back()->with("message", "Task has been added");
     }
