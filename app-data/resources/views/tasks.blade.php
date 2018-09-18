@@ -64,12 +64,28 @@
                                     @foreach ($tasks as $task)
                                         <tr>
                                             <!-- Task Name -->
-                                            <td class="table-text">
+                                            <td class="align-middle">
                                                 <div>{{ $task->task }}</div>
                                             </td>
 
                                             <td>
                                                 <!-- TODO: Delete Button -->
+                                                {{-- <button type="submit" class="btn btn-primary">
+                                                    <i class="fa fa-plus"></i> Done!
+                                                </button> --}}
+                                                {{-- <form action="/tasks" method="POST">
+                                                    <button type="submit" class="btn">
+                                                        <a href="{{ url('/destroy', $task->id) }}">Done!</a>
+                                                    </button>
+                                                </form> --}}
+                                                {{-- <a href="{{ url('/users/edit', $user->id) }}">EDIT</a> --}}
+
+                                                <form action="{{action('TaskController@destroy', $task->id)}}" method="post">
+                                                {{csrf_field()}}
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <button class="btn btn-danger" type="submit">Done!</button>
+                                                </form>
+                                                
                                             </td>
                                         </tr>
                                     @endforeach
