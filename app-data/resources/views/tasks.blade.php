@@ -19,7 +19,7 @@
                         @include('common.errors')
                         
                         <!-- New Task Form -->
-                        <form action="/task" method="POST" class="form-horizontal">
+                        <form action="/tasks" method="POST" class="form-horizontal">
                             {{ csrf_field() }}
                 
                             <!-- Task Name -->
@@ -44,7 +44,7 @@
                     </div>
 
                     <!-- Current Tasks -->
-                    @if (count($tasks) > 0)
+                    {{-- @if (count($tasks) > 0) --}}
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Current Tasks
@@ -65,7 +65,7 @@
                                         <tr>
                                             <!-- Task Name -->
                                             <td class="table-text">
-                                                <div>{{ $task->name }}</div>
+                                                <div>{{ $task->task }}</div>
                                             </td>
 
                                             <td>
@@ -77,7 +77,7 @@
                             </table>
                         </div>
                     </div>
-                    @endif
+                    {{-- @endif --}}
 
 
 

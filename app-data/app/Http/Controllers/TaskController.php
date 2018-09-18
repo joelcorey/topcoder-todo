@@ -12,20 +12,23 @@ use Log;
 class TaskController extends Controller
 {
 
-    protected $tasks;
+    // protected $tasks;
 
     public function __construct()
     {
         $this->middleware('auth');
 
-        
-    }
+        // $this->tasks = $tasks;
+    }   
 
     public function index(Request $request)
     {
-        $tasks = Task::where("is_completed", false)->orderBy("id", "DEC")->get();
-        $completed_tasks = Task::where("is_completed", true)->get();
-        return view("tasks", compact("tasks", "completed_tasks"));
+        $tasks = Task::where("user_id", \Auth::user()->id)->get();
+        //$completed_tasks = Task::where("is_completed", true)->get();
+        //return view("tasks", compact("tasks"));
+
+        return view('tasks')->with('tasks', $tasks);
+
     }
 
     public function store(Request $request)
