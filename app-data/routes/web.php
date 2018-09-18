@@ -17,10 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('login/github', 'Auth\LoginController@redirectToProviderGitHub');
-// Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallbackGitHub');
+Route::get('/tasks', 'TasksController@index')->name('home');
 
 Route::get('auth/callback/{provider}', 'Auth\LoginController@callback');
 Route::get('auth/redirect/{provider}', 'Auth\LoginController@redirect');
+
+Route::get('/tasks', 'TaskController@index');
+Route::post('/task', 'TaskController@store');
+Route::delete('/task/{task}', 'TaskController@destroy');

@@ -24,7 +24,6 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- {{ asset('img/basket_cart_checklist_list_schedule_shop_todo_icon_512_2.png') }} --}}
                     {{ Html::image('img/basket_cart_checklist_list_schedule_shop_todo_icon_512_2-clear.png', 'a picture', array( 'width' => 30, 'height' => 30 )) }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
