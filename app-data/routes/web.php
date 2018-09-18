@@ -27,3 +27,5 @@ Route::post('/tasks', 'TaskController@store');
 // Route::get("/{id}/complete", "TaskController@complete");
 Route::delete('/delete/{id}', 'TaskController@destroy');
 
+
+Route::get('/guidelines', 'GuidelinesController@index');
