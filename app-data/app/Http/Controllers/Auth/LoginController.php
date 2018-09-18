@@ -9,6 +9,7 @@ use Socialite;
 use Auth;
 
 use App\User;
+use App\Task;
 
 class LoginController extends Controller
 {
@@ -30,7 +31,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/tasks';
 
     /**
      * Create a new controller instance.
@@ -57,7 +58,7 @@ class LoginController extends Controller
         //auth()->login($user);
         Auth::login($user, true);
 
-        return redirect('/home');
+        return redirect('/tasks');
 
     }
 
