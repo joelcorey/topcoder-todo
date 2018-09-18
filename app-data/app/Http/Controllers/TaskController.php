@@ -36,7 +36,7 @@ class TaskController extends Controller
         $input = $request->all();
         $task = new Task();
         $task->user_id = \Auth::user()->id;
-        $task->task = request("task");
+        $task->task = $request["task"];
         //log::info(print_r($task, true));
         $task->save();
         return Redirect::back()->with("message", "Task has been added");
