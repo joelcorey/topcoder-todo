@@ -47,7 +47,7 @@
                     {{-- @if (count($tasks) > 0) --}}
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Current Tasks
+                            {{-- Current Tasks --}}
                         </div>
 
                         <div class="panel-body">
@@ -55,8 +55,8 @@
 
                                 <!-- Table Headings -->
                                 <thead>
-                                    <th>Task</th>
-                                    <th>&nbsp;</th>
+                                    {{-- <th>Task</th>
+                                    <th>&nbsp;</th> --}}
                                 </thead>
 
                                 <!-- Table Body -->
@@ -70,20 +70,20 @@
                                             </td>
 
                                             <td>
-                                                <form action="{{action('TaskController@destroy', $task->id)}}" method="post">
+                                                <form action="{{ action('TaskController@getOne', $task->id) }}" method="post">
                                                     {{csrf_field()}}
+                                                    <input name="_method" type="hidden" value="POST">
+                                                    <button class="btn btn-primary" type="submit">Edit</button>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <form action="{{ action('TaskController@destroy', $task->id) }}" method="post">
+                                                    {{ csrf_field() }}
                                                     <input name="_method" type="hidden" value="DELETE">
                                                     <button class="btn btn-danger" type="submit">Done!</button>
                                                 </form>
                                             </td>
-                                            <td>
-                                                <form action="{{action('TaskController@edit', $task->id)}}" method="post">
-                                                    {{csrf_field()}}
-                                                    <input name="_method" type="hidden" value="POST">
-                                                    <button class="btn btn-danger" type="submit">Edit</button>
-                                                </form>
-                                            </td>
-
+                                            
                                         </tr>
                                     @endforeach
                                 </tbody>
