@@ -70,6 +70,7 @@ class TaskController extends Controller
         $task->user_id = \Auth::user()->id;
         $task->task = $request["task"];
         $task->save();
-        return Redirect::back()->with("message", "Task has been edited");
+        // return Redirect::back()->with("message", "Task has been edited");
+        return Redirect::to('tasks');
     }
 }
