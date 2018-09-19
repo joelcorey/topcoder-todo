@@ -24,8 +24,6 @@ class TaskController extends Controller
     public function index(Request $request)
     {
         $tasks = Task::where("user_id", \Auth::user()->id)->get();
-        //$completed_tasks = Task::where("is_completed", true)->get();
-        //return view("tasks", compact("tasks"));
 
         return view('tasks')->with('tasks', $tasks);
 
@@ -37,7 +35,6 @@ class TaskController extends Controller
         $task = new Task();
         $task->user_id = \Auth::user()->id;
         $task->task = $request["task"];
-        //log::info(print_r($task, true));
         $task->save();
         return Redirect::back()->with("message", "Task has been added");
     }
@@ -55,5 +52,24 @@ class TaskController extends Controller
         $task = Task::find($id);
         $task->delete();
         return Redirect::back()->with('message', "Task has been deleted");
+    }
+
+    public function getOne($id)
+    {
+        $task = Task::find($id);
+
+        log::info(print_r($task, true));
+
+        // return view('edit')->with('task', $task);
+        return view('edit', ['task' => $task]);
+    }
+
+    public function edit($id)
+    {
+        $task = Task::find($id);
+        $task->user_id = \Auth::user()->id;
+        $task->task = $request["task"];
+        $task->save();
+        return Redirect::back()->with("message", "Task has been added");
     }
 }
