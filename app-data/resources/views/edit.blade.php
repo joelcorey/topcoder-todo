@@ -20,9 +20,9 @@
                         
                         <!-- New Task Form -->
                         {{-- {{ dd(@$task) }} --}}
-                        <form action="{{action('TaskController@edit', $task->id)}}" method="post">
+                        <form action="{{ action('TaskController@editTask', $task->id) }}" method="post">
                             @csrf
-                            <input name="_method" type="hidden" value="PATCH">
+                            <input name="_method" type="hidden" value="POST">
                             
                             <!-- Task Name -->
                             {{-- <div class="form-group">
@@ -36,8 +36,8 @@
                             <div class="row">
                                 <div class="col-md-4"></div>
                                 <div class="form-group col-md-4">
-                                    <label for="name">Task:</label>
-                                    <input type="text" class="form-control" name="name" id="task" value="{{$task->task}}">
+                                    <label for="task">Task:</label>
+                                    <input type="text" class="form-control" name="task" id="task" value="{{$task->task}}">
                                 </div>
                             </div>
 

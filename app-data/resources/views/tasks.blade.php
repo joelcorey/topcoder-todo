@@ -70,9 +70,9 @@
                                             </td>
 
                                             <td>
-                                                <form action="{{ action('TaskController@getOne', $task->id) }}" method="post">
+                                                <form action="{{ action('TaskController@getTask', $task->id) }}" method="get">
                                                     {{csrf_field()}}
-                                                    <input name="_method" type="hidden" value="POST">
+                                                    <input name="_method" type="hidden" value="GET">
                                                     <button class="btn btn-primary" type="submit">Edit</button>
                                                 </form>
                                             </td>

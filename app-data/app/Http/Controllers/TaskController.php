@@ -54,7 +54,7 @@ class TaskController extends Controller
         return Redirect::back()->with('message', "Task has been deleted");
     }
 
-    public function getOne($id)
+    public function getTask($id)
     {
         $task = Task::find($id);
 
@@ -64,12 +64,12 @@ class TaskController extends Controller
         return view('edit', ['task' => $task]);
     }
 
-    public function edit($id)
+    public function editTask($id, Request $request)
     {
         $task = Task::find($id);
         $task->user_id = \Auth::user()->id;
         $task->task = $request["task"];
         $task->save();
-        return Redirect::back()->with("message", "Task has been added");
+        return Redirect::back()->with("message", "Task has been edited");
     }
 }
