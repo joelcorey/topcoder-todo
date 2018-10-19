@@ -55,7 +55,53 @@ Rebuild a Docker container
 
 ## TopCoder guidelines:
 
-### Challenge Overview
+### Challenge Overview Round 2:
+
+This is the second in a series of challenges of building an awesome todo list app. In the second step to this challenge we will add the ability, to not only delete a task but, you can have it marked complete using a radio box. After checking the completed box the task will be crossed out but remain in your list of tasks until deleted. You must be able to CRUD a list. And you must be able to CRUD a list items.
+
+Another feature we will be adding to the application is that the app will have 2 extra css options for the whole application. Create a setting tab where you can choose one of three colors for the application. You can pick the color scheme but there should be three options. An example is black, red or blue background with different color texts for each background.
+
+There is a code base provided in the forum but it is in PHP with a Laravel framework and VueJS. The code base has the basic CRUD to create a list and create tasks inside the list. If you would like to use the stack of your choice you will need to start from scratch
+
+### UI Considerations:
+
+    A user must sign in
+
+    A user must have the option to using 3rd-party OAuth providers like Facebook, Google or GitHub. You must integrate two out of three.
+
+    Be able to perform all CRUD actions from the UI
+
+    A user must be able to complete a task and mark it as complete
+
+    The setting tab should lead to preferences and then 3 color schemes
+
+    A user must be able to pick between a total of 3 color schemes for the application
+
+
+### Tech Stack:
+
+    Pick whatever tech stack you like and list it in your readme file
+
+### Requirements
+
+    Following screens must be included
+
+        Login with two options:
+
+            OAuth workflow
+
+            Custom made login with email and password with confirmation of password.
+
+        List of to-do records
+
+        A way to create, edit and delete to-do items
+
+        Settings tab to change color scheme in application
+
+        Log out
+
+
+### Challenge Overview Round 1:
 
 This is the first in a series of challenges of building an awesome todo list app. In the first step to this challenge we will create an app that can do all CRUD actions. You must be able to CRUD a list. And you must be able to CRUD a list items. We will add reminders and setting deadlines in the next few challenges
 
